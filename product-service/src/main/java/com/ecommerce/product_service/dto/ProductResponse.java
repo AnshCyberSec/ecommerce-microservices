@@ -15,5 +15,6 @@ public class ProductResponse {
     private Integer stockQuantity;
     private String category;
     private String imageUrl;
+    private String slug;
     private LocalDateTime createdAt;
 }

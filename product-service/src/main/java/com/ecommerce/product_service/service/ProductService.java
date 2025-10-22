@@ -26,4 +26,7 @@ public interface ProductService {
     // For order service - parallel processing
     CompletableFuture<Boolean> validateProducts(List<Long> productIds);
     CompletableFuture<List<ProductResponse>> getProductsByIds(List<Long> productIds);
+
+
+    ProductResponse getProductBySlug(String slug);
 }

@@ -148,4 +148,11 @@ public class ProductServiceImpl implements ProductService {
                     .collect(Collectors.toList());
         });
     }
+
+    @Override
+    public ProductResponse getProductBySlug(String slug) {
+        Product product = productRepository.findBySlug(slug)
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with slug: " + slug));
+        return productMapper.toResponse(product);
+    }
 }

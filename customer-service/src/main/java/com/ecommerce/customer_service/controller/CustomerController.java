@@ -24,7 +24,7 @@ import java.util.concurrent.CompletableFuture;
 public class CustomerController {
 
     private final CustomerService customerService;
-    private final CustomerRepository customerRepository;  // Ye add karo
+    private final CustomerRepository customerRepository;
 
     @PostMapping
     public ResponseEntity<CustomerResponse> createCustomer(@Valid @RequestBody CustomerRequest request) {
@@ -62,7 +62,7 @@ public class CustomerController {
                 .thenApply(ResponseEntity::ok);
     }
 
-    // YEH NAYA METHOD ADD KARO - Order service ke liye
+
     @PostMapping("/{id}/details")
     public ResponseEntity<CustomerDetails> getCustomerDetails(@PathVariable Long id) {
         Customer customer = customerRepository.findById(id)
@@ -75,7 +75,7 @@ public class CustomerController {
         return ResponseEntity.ok(details);
     }
 
-    // Inner class for response - CustomerController ke andar hi add karo
+    // Inner class for response
     public static class CustomerDetails {
         private String name;
         private String email;

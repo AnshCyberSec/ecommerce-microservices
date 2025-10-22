@@ -112,4 +112,10 @@ public class ProductController {
         return productService.getProductsByIds(productIds)
                 .thenApply(ResponseEntity::ok);
     }
+
+
+    @GetMapping("/slug/{slug}")
+    public ResponseEntity<ProductResponse> getProductBySlug(@PathVariable String slug) {
+        return ResponseEntity.ok(productService.getProductBySlug(slug));
+    }
 }

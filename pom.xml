@@ -16,6 +16,7 @@
         <module>product-service</module>
         <module>customer-service</module>
         <module>order-service</module>
+        <module>redis-cache-service</module>
     </modules>
 
     <parent>

@@ -17,6 +17,7 @@ public class ProductMapper {
                 .price(request.getPrice())
                 .stockQuantity(request.getStockQuantity())
                 .category(request.getCategory())
+                .slug(request.getSlug())
                 .build();
     }
 
@@ -29,6 +30,7 @@ public class ProductMapper {
                 .stockQuantity(product.getStockQuantity())
                 .category(product.getCategory())
                 .imageUrl(product.getImageUrl())
+                .slug(product.getSlug())
                 .createdAt(product.getCreatedAt())
                 .build();
     }

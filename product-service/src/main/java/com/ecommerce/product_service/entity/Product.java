@@ -32,6 +32,9 @@ public class Product {
 
     private String imageUrl;
 
+    @Column(unique = true, nullable = false)
+    private String slug;
+
     @Builder.Default
     @Column(updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
