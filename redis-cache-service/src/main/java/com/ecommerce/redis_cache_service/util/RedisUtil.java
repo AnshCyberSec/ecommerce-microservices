@@ -18,14 +18,14 @@ public class RedisUtil {
     private final RedisTemplate<String, Object> redisTemplate;
 
 
-     // pattern-based key scanning
+    // pattern-based key scanning
 
     public Set<String> scanKeys(String pattern) {
         Set<String> keys = new HashSet<>();
         try {
             ScanOptions options = ScanOptions.scanOptions()
                     .match(pattern)
-                    .count(100)  // Batch size
+                    .count(100)
                     .build();
 
             Cursor<byte[]> cursor = redisTemplate.execute(connection ->
@@ -43,7 +43,7 @@ public class RedisUtil {
     }
 
 
-     //Pattern-based key deletion
+    //Pattern-based key deletion
 
     public void deleteKeysByPattern(String pattern) {
         try {
@@ -59,14 +59,14 @@ public class RedisUtil {
         }
     }
 
-     //Key count by pattern
+    //Key count by pattern
 
     public long getKeyCountByPattern(String pattern) {
         return scanKeys(pattern).size();
     }
 
 
-     //Check if key exists
+    //Check if key exists
 
     public boolean keyExists(String key) {
         try {
@@ -78,7 +78,7 @@ public class RedisUtil {
     }
 
 
-     //Get TTL of a key
+    //Get TTL of a key
 
     public Long getKeyTtl(String key) {
         try {

@@ -10,7 +10,6 @@ import org.springframework.web.client.RestTemplate;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 @Slf4j
 @Service
